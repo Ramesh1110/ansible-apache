@@ -4,7 +4,7 @@
   tasks:
     - name: Copying files
       ansible.builtin.copy:
-        src: workspace/ansible-docker-pipeline
+        src: .
         dest: ~/project/
         #owner: root
         # remote_src: yes
