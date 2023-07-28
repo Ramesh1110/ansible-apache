@@ -1,0 +1,11 @@
+- hosts: docker
+  remote_user: root
+  become: true
+  tasks:
+    - name: Copying files
+      ansible.builtin.copy:
+        src: workspace/ansible-docker-pipeline
+        dest: ~/project/
+        #owner: root
+        # remote_src: yes
+        mode: '0777'
