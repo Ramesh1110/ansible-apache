@@ -9,3 +9,18 @@
         #owner: root
         # remote_src: yes
         mode: '0777'
+
+    - name: Docker image build
+      community.docker.docker_image:
+        name: primecare:latest
+        build:
+          path: ~/project/
+        source: build
+
+    - name: Creating docker container
+      docker_container:
+        name: primecare-container
+        image: primecare:latest
+        ports:
+          - "80:80"
+        state: started
