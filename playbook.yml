@@ -16,6 +16,7 @@
         build:
           path: ~/project/
         source: build
+        state: present
 
     - name: Creating docker container
       docker_container:
