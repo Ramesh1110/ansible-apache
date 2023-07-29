@@ -2,13 +2,13 @@
   remote_user: root
   become: true
   tasks:
-    #- name: Copying files
-     # ansible.builtin.copy:
-      #  src: .
-      #  dest: ~/project/
-      #  #owner: root
-       # # remote_src: yes
-      #  mode: '0777'
+    - name: Copying files
+      ansible.builtin.copy:
+        src: .
+        dest: ~/project/
+        #owner: root
+        # remote_src: yes
+        mode: '0777'
 
     - name: Docker image build
       docker_image:
